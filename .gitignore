@@ -1,0 +1,36 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.vscode/
+.idea/
+*.log
+data/output/*.docx
+
+# Virtual environment
+venv/
+env/
+
+# Intermediate data
+data/intermediate/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Test coverage
+.pytest_cache/
+.coverage
+htmlcov/

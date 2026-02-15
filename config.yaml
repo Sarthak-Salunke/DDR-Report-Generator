@@ -1,0 +1,65 @@
+# ============================================================================
+# LLM Provider Configuration
+# ============================================================================
+
+llm:
+  # Provider priority (will try in order)
+  primary_provider: "groq"
+  backup_provider: "gemini"
+  
+  # Failover behavior
+  failure_threshold: 3              # Failures before switching providers
+  circuit_breaker_minutes: 5        # Minutes to wait before retrying failed provider
+  auto_recovery_minutes: 30         # Minutes of backup success before trying primary again
+  
+  # Gemini Configuration (Primary - Free, Fast, Cost-effective)
+  gemini:
+    model: "gemini-1.5-flash-latest"
+    api_key_env: "GOOGLE_API_KEY"
+    max_tokens: 8000
+    temperature: 0.1
+    max_retries: 3
+    timeout: 60
+    
+  # Groq Configuration (Backup - Free, Ultra-fast)
+  groq:
+    model: "llama-3.1-70b-versatile"
+    api_key_env: "GROQ_API_KEY"
+    max_tokens: 8000
+    temperature: 0.1
+    max_retries: 3
+    timeout: 60
+
+# ============================================================================
+# Extraction Configuration
+# ============================================================================
+
+extraction:
+  confidence_threshold: 0.7
+  batch_size: 5
+  
+# ============================================================================
+# Deduplication Configuration
+# ============================================================================
+
+deduplication:
+  similarity_threshold: 0.85
+  embedding_model: "all-MiniLM-L6-v2"
+  
+# ============================================================================
+# Output Configuration
+# ============================================================================
+
+output:
+  format: "docx"
+  style: "professional"
+  font_name: "Calibri"
+  font_size: 11
+  
+# ============================================================================
+# Validation Configuration
+# ============================================================================
+
+validation:
+  min_observations: 5
+  required_sections: ["property_details", "observations", "summary"]
