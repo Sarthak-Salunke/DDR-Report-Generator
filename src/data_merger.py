@@ -169,7 +169,7 @@ class DataMerger:
             json.dump(serializable, f, indent=2, ensure_ascii=False)
         
         if self.verbose:
-            print(f"💾 Merge results saved to {output_path}")
+            print(f"Merge results saved to {output_path}")
     
     def analyze_threshold_sensitivity(
         self,
@@ -237,7 +237,7 @@ class DataMerger:
                 optimal_score = score
                 optimal = threshold
         
-        print(f"\n✅ Recommended threshold: {optimal:.2f}")
+        print(f"\n✓ Recommended threshold: {optimal:.2f}")
         print(f"   - Deduplication rate: {results[optimal]['deduplication_rate']:.1%}")
         print(f"   - Duplicate groups: {results[optimal]['duplicate_groups']}")
         print(f"   - Conflicts: {results[optimal]['conflicts']}")
@@ -476,14 +476,14 @@ def test_merger():
         [obs2]  # thermal
     )
     
-    print(f"\n✅ Merge completed:")
+    print(f"\n✓ Merge completed:")
     print(f"   - Original: 3 observations")
     print(f"   - Merged: {result['total_observations']} unique")
     print(f"   - Duplicates: {result['duplicate_groups']} groups")
     print(f"   - Conflicts: {len(result['conflicts_detected'])}")
     
     print("\n" + "="*60)
-    print("✅ MERGER TEST PASSED")
+    print("✓ MERGER TEST PASSED")
     print("="*60)
 
 

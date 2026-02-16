@@ -293,10 +293,10 @@ def log_step(step_name: str, status: str = "START", details: str = ""):
         details: Additional information
     """
     symbols = {
-        'START': '▶',
-        'COMPLETE': '✅',
-        'ERROR': '❌',
-        'WARNING': '⚠️'
+        'START': '*',
+        'COMPLETE': '✓',
+        'ERROR': '!',
+        'WARNING': '!'
     }
     
     symbol = symbols.get(status.upper(), '•')
@@ -351,7 +351,7 @@ def test_utilities():
     sim = calculate_text_similarity("dampness in hall", "hall dampness")
     print(f"  Similarity: {sim:.2f}")
     
-    print("\n✅ All utility tests passed!")
+    print("\n✓ All utility tests passed!")
 
 
 if __name__ == "__main__":

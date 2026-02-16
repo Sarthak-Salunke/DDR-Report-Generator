@@ -93,21 +93,26 @@ class DocumentParser:
                     'total_chars': sum(len(p) for p in pages) if pages else 0
                 }
                 
-                # Infer document type
-                # We need to construct full text string for type inference
+                # Cleanup and join text
+                cleaned_pages = [clean_extracted_text(p) for p in pages]
                 joined_text = "\n\n".join(full_text)
-                doc_type = self._infer_document_type(pdf_path.name, full_text)
+                
+                # Final cleanup of the joined text
+                joined_text = clean_extracted_text(joined_text)
+                
+                # Infer document type
+                doc_type = self._infer_document_type(pdf_path.name, cleaned_pages)
                 
                 if self.verbose:
                     print(f"  ✓ Extracted {len(pages)} pages")
                     print(f"  ✓ Type: {doc_type}")
                     print(f"  ✓ Quality: {extraction_quality:.1%}")
                     if warnings:
-                        print(f"  ⚠ {len(warnings)} warnings")
+                        print(f"  [warn] {len(warnings)} warnings")
                 
                 return ExtractedDocument(
                     text=joined_text,
-                    pages=pages,
+                    pages=cleaned_pages,
                     metadata=metadata,
                     document_type=doc_type,
                     extraction_quality=extraction_quality,
@@ -193,6 +198,29 @@ class DocumentParser:
 
 def clean_extracted_text(text: str) -> str:
     """Clean extracted text by removing excessive whitespace and artifacts"""
+    if not text:
+        return ""
+        
+    # Fix spread characters issue (common in PyPDF2)
+    # Pattern: "H o t s p o t   :   2 8 . 8"
+    # Step 1: Detect if text is spread
+    lines = text.split('\n')
+    spread_count = 0
+    sample_size = min(20, len(lines))
+    for line in lines[:sample_size]:
+        if len(line) > 10 and re.search(r'(\w\s){3,}', line):
+            spread_count += 1
+            
+    if spread_count > sample_size / 2:
+        # Text is likely spread. Fix it while preserving word boundaries
+        # Use a marker for double+ spaces (word separators)
+        text = re.sub(r' {2,}', '\t', text)
+        # Remove single spaces (character separators)
+        text = text.replace(' ', '')
+        # Restore word separators
+        text = text.replace('\t', ' ')
+        
+    # General cleanup
     # Remove multiple newlines
     text = re.sub(r'\n{3,}', '\n\n', text)
     
@@ -201,6 +229,9 @@ def clean_extracted_text(text: str) -> str:
     
     # Remove page number artifacts
     text = re.sub(r'Page \d+ of \d+', '', text)
+    
+    # Remove control characters
+    text = "".join(ch for ch in text if ord(ch) >= 32 or ch in '\n\t')
     
     return text.strip()
 

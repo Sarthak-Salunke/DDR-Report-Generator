@@ -237,6 +237,8 @@ class DDRPipeline:
                 try:
                     if inspection_data is None:
                         inspection_data = self.extractor.extract_inspection_data(inspection_doc.text)
+                        import time
+                        time.sleep(10)  # Wait between extractions to avoid rate limits
                     if thermal_data is None:
                         thermal_data = self.extractor.extract_thermal_data(thermal_doc.text)
                     break
@@ -348,7 +350,7 @@ class DDRPipeline:
                 severity=self._assess_thermal_severity(reading.temperature_delta),
                 source_document="thermal",
                 confidence=0.8,
-                evidence=[f"Hotspot: {reading.hotspot_temp}°C, Coldspot: {reading.coldspot_temp}°C, Delta: {reading.temperature_delta}°C"]
+                evidence=f"Hotspot: {reading.hotspot_temp}°C, Coldspot: {reading.coldspot_temp}°C, Delta: {reading.temperature_delta}°C"
             )
             observations.append(obs)
         

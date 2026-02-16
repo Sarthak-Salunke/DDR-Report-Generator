@@ -14,7 +14,7 @@ llm:
   
   # Gemini Configuration (Primary - Free, Fast, Cost-effective)
   gemini:
-    model: "gemini-1.5-flash-latest"
+    model: "gemini-2.0-flash"
     api_key_env: "GOOGLE_API_KEY"
     max_tokens: 8000
     temperature: 0.1
@@ -23,7 +23,7 @@ llm:
     
   # Groq Configuration (Backup - Free, Ultra-fast)
   groq:
-    model: "llama-3.1-70b-versatile"
+    model: "llama-3.3-70b-versatile"
     api_key_env: "GROQ_API_KEY"
     max_tokens: 8000
     temperature: 0.1

@@ -14,7 +14,8 @@ import re
 
 # Provider-specific imports
 try:
-    import google.generativeai as genai
+    from google import genai
+    from google.genai import types
     GEMINI_AVAILABLE = True
 except ImportError:
     GEMINI_AVAILABLE = False
@@ -229,21 +230,34 @@ class BaseLLMProvider(ABC):
         Extract JSON from various LLM response formats
         Handles markdown code blocks, plain JSON, and JSON with preamble
         """
+        if not response_text or not response_text.strip():
+            self.logger.error("Empty response received from LLM")
+            raise LLMProviderError("Empty response from LLM")
+
+        response_text = response_text.strip()
+        
         # Remove markdown code blocks
         if "```json" in response_text:
             start = response_text.find("```json") + 7
             end = response_text.find("```", start)
-            json_str = response_text[start:end].strip()
+            if end == -1: # Unclosed code block
+                json_str = response_text[start:].strip()
+            else:
+                json_str = response_text[start:end].strip()
         elif "```" in response_text:
             start = response_text.find("```") + 3
             end = response_text.find("```", start)
-            json_str = response_text[start:end].strip()
+            if end == -1:
+                json_str = response_text[start:].strip()
+            else:
+                json_str = response_text[start:end].strip()
         else:
             # Try to find JSON object
             if "{" in response_text and "}" in response_text:
                 start = response_text.find("{")
                 # Find matching closing brace
                 brace_count = 0
+                json_str = ""
                 for i, char in enumerate(response_text[start:], start=start):
                     if char == "{":
                         brace_count += 1
@@ -252,17 +266,28 @@ class BaseLLMProvider(ABC):
                         if brace_count == 0:
                             json_str = response_text[start:i+1]
                             break
-                else:
-                    json_str = response_text.strip()
+                if not json_str:
+                    json_str = response_text[start:].strip()
             else:
                 json_str = response_text.strip()
         
+        if not json_str:
+            self.logger.error("Could not find JSON object in response")
+            self.logger.debug(f"Raw response: {response_text[:500]}...")
+            raise LLMProviderError("No JSON found in LLM response")
+
         try:
             return json.loads(json_str)
         except json.JSONDecodeError as e:
-            self.logger.error(f"Failed to parse JSON: {str(e)}")
-            self.logger.debug(f"Attempted to parse: {json_str[:200]}...")
-            raise LLMProviderError(f"Invalid JSON response: {str(e)}")
+            # Attempt a quick fix for common LLM JSON errors (like trailing commas)
+            try:
+                # Remove trailing commas before closing braces/brackets
+                fixed_json = re.sub(r',\s*([\]}])', r'\1', json_str)
+                return json.loads(fixed_json)
+            except:
+                self.logger.error(f"Failed to parse JSON: {str(e)}")
+                self.logger.debug(f"Attempted to parse: {json_str[:500]}...")
+                raise LLMProviderError(f"Invalid JSON response: {str(e)}")
 
 
 # Gemini Provider
@@ -279,50 +304,43 @@ class GeminiProvider(BaseLLMProvider):
     
     def __init__(self, api_key: str, **kwargs):
         if not GEMINI_AVAILABLE:
-            raise ImportError("google-generativeai package not installed. Run: pip install google-generativeai")
+            raise ImportError("google-genai package not installed. Run: pip install google-genai")
         
         super().__init__(api_key=api_key, **kwargs)
         
-        # Configure Gemini
-        genai.configure(api_key=api_key)
+        # Initialize Gemini Client
+        self.client = genai.Client(api_key=api_key)
         
-        # Initialize model
-        generation_config = {
-            "temperature": self.temperature,
-            "max_output_tokens": self.max_tokens,
-        }
-        
-        safety_settings = [
-            {
-                "category": "HARM_CATEGORY_HARASSMENT",
-                "threshold": "BLOCK_NONE"
-            },
-            {
-                "category": "HARM_CATEGORY_HATE_SPEECH",
-                "threshold": "BLOCK_NONE"
-            },
-            {
-                "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                "threshold": "BLOCK_NONE"
-            },
-            {
-                "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-                "threshold": "BLOCK_NONE"
-            },
-        ]
-        
-        self.client = genai.GenerativeModel(
-            model_name=self.model,
-            generation_config=generation_config,
-            safety_settings=safety_settings
+        # Configure generation and safety
+        self.config = types.GenerateContentConfig(
+            temperature=self.temperature,
+            max_output_tokens=self.max_tokens,
+            safety_settings=[
+                types.SafetySetting(
+                    category="HARM_CATEGORY_HARASSMENT",
+                    threshold="BLOCK_NONE"
+                ),
+                types.SafetySetting(
+                    category="HARM_CATEGORY_HATE_SPEECH",
+                    threshold="BLOCK_NONE"
+                ),
+                types.SafetySetting(
+                    category="HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                    threshold="BLOCK_NONE"
+                ),
+                types.SafetySetting(
+                    category="HARM_CATEGORY_DANGEROUS_CONTENT",
+                    threshold="BLOCK_NONE"
+                ),
+            ]
         )
         
         if self.verbose:
             self.logger.info(f"✓ Gemini provider initialized: {self.model}")
     
     @retry(
-        stop=stop_after_attempt(3),
-        wait=wait_exponential(multiplier=1, min=1, max=10),
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=4, max=60),
         retry=retry_if_exception_type((RateLimitError, TimeoutError)),
         before_sleep=before_sleep_log(logging.getLogger(__name__), logging.WARNING)
     )
@@ -334,8 +352,12 @@ class GeminiProvider(BaseLLMProvider):
             # Count input tokens
             input_tokens = self._count_tokens(prompt)
             
-            # Generate response
-            response = self.client.generate_content(prompt)
+            # Generate response using new SDK
+            response = self.client.models.generate_content(
+                model=self.model,
+                contents=prompt,
+                config=self.config
+            )
             
             # Extract text
             if not response.text:
@@ -433,8 +455,8 @@ class GroqProvider(BaseLLMProvider):
             self.logger.info(f"✓ Groq provider initialized: {self.model}")
     
     @retry(
-        stop=stop_after_attempt(3),
-        wait=wait_exponential(multiplier=1, min=1, max=10),
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=4, max=60),
         retry=retry_if_exception_type((RateLimitError, TimeoutError)),
         before_sleep=before_sleep_log(logging.getLogger(__name__), logging.WARNING)
     )

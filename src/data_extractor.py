@@ -52,7 +52,7 @@ class DataExtractor:
         )
         
         if self.verbose:
-            print(f"✓ DataExtractor initialized with multi-provider LLM system")
+            print(f"[*] DataExtractor initialized with multi-provider LLM system")
     
     def extract_inspection_data(self, document_text: str) -> InspectionData:
         """
@@ -68,7 +68,7 @@ class DataExtractor:
             ValueError: If extraction fails or data invalid
         """
         if self.verbose:
-            print("\n🧠 Extracting inspection data with LLM...")
+            print("\n[LLM] Extracting inspection data with LLM...")
         
         prompt = build_inspection_prompt(document_text)
         
@@ -125,7 +125,7 @@ class DataExtractor:
             ValueError: If extraction fails or data invalid
         """
         if self.verbose:
-            print("\n🌡️  Extracting thermal data with LLM...")
+            print("\n Extracting thermal data with LLM...")
         
         prompt = build_thermal_prompt(document_text)
         
@@ -194,9 +194,9 @@ class DataExtractor:
             
             if self.verbose:
                 if validation_report['is_valid']:
-                    print(f"  ✅ Validation passed (score: {validation_report['accuracy_score']:.2f})")
+                    print(f"Validation passed (score: {validation_report['accuracy_score']:.2f})")
                 else:
-                    print(f"  ⚠️  Validation issues found:")
+                    print(f"Validation issues found:")
                     for error in validation_report['errors_found']:
                         print(f"    - {error['type']}: {error['description']}")
             
@@ -230,7 +230,7 @@ class DataExtractor:
         
         for i, (inspection_text, thermal_text) in enumerate(documents, 1):
             if self.verbose:
-                print(f"\n📄 Processing document pair {i}/{len(documents)}")
+                print(f"\nProcessing document pair {i}/{len(documents)}")
             
             inspection_data = self.extract_inspection_data(inspection_text)
             thermal_data = self.extract_thermal_data(thermal_text)
@@ -263,14 +263,14 @@ def test_extractor():
     try:
         # Extract inspection data
         inspection_data = extractor.extract_inspection_data(inspection_doc.text)
-        print(f"\n✅ Inspection extraction successful:")
+        print(f"\n Inspection extraction successful:")
         print(f"   - Property: {inspection_data.property_details.property_type}")
         print(f"   - Observations: {len(inspection_data.observations)}")
         print(f"   - Root causes: {len(inspection_data.root_causes)}")
         
         # Extract thermal data
         thermal_data = extractor.extract_thermal_data(thermal_doc.text)
-        print(f"\n✅ Thermal extraction successful:")
+        print(f"\n Thermal extraction successful:")
         print(f"   - Readings: {len(thermal_data.readings)}")
         print(f"   - Date: {thermal_data.date}")
         
@@ -279,16 +279,16 @@ def test_extractor():
             inspection_doc.text,
             inspection_data.model_dump()
         )
-        print(f"\n✅ Validation completed:")
+        print(f"\n Validation completed:")
         print(f"   - Valid: {validation['is_valid']}")
         print(f"   - Score: {validation['accuracy_score']:.2f}")
         
         print("\n" + "="*60)
-        print("✅ ALL TESTS PASSED")
+        print(" ALL TESTS PASSED")
         print("="*60)
         
     except Exception as e:
-        print(f"\n❌ Test failed: {str(e)}")
+        print(f"\n Test failed: {str(e)}")
         raise
 
 
