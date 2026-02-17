@@ -12,14 +12,12 @@ build/
 .vscode/
 .idea/
 *.log
-data/output/*.docx
 
 # Virtual environment
 venv/
 env/
 
 # Intermediate data
-data/intermediate/
 
 # OS files
 .DS_Store

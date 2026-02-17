@@ -1,0 +1,280 @@
+{
+  "readings": [
+    {
+      "location": "Not Available",
+      "hotspot_temp": 28.8,
+      "coldspot_temp": 23.4,
+      "temperature_delta": 5.4,
+      "date": "27.09.2022",
+      "image_reference": "RB02380X.JPG",
+      "interpretation": "Temperature differential of 5.4\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 27.4,
+      "coldspot_temp": 22.4,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02386X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 27.0,
+      "coldspot_temp": 22.0,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02395X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.7,
+      "coldspot_temp": 20.7,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02402X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.5,
+      "coldspot_temp": 20.5,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02403X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.8,
+      "coldspot_temp": 20.8,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02404X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.2,
+      "coldspot_temp": 21.2,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02405X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.5,
+      "coldspot_temp": 21.5,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02406X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.8,
+      "coldspot_temp": 20.8,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02392X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.9,
+      "coldspot_temp": 20.9,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02393X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.0,
+      "coldspot_temp": 21.0,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02394X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.1,
+      "coldspot_temp": 21.1,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02396X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.3,
+      "coldspot_temp": 21.3,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02397X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.6,
+      "coldspot_temp": 20.6,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02398X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.5,
+      "coldspot_temp": 21.5,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02399X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.2,
+      "coldspot_temp": 20.2,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02400X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.6,
+      "coldspot_temp": 20.6,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02401X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 27.0,
+      "coldspot_temp": 22.0,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02381X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.7,
+      "coldspot_temp": 21.7,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02382X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.5,
+      "coldspot_temp": 21.5,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02383X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 27.3,
+      "coldspot_temp": 22.3,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02384X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 27.3,
+      "coldspot_temp": 22.3,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02385X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.2,
+      "coldspot_temp": 20.2,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02387X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.1,
+      "coldspot_temp": 20.1,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02388X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.9,
+      "coldspot_temp": 20.9,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02389X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.9,
+      "coldspot_temp": 21.9,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02390X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 25.6,
+      "coldspot_temp": 20.6,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02391X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.9,
+      "coldspot_temp": 21.9,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02377X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 26.4,
+      "coldspot_temp": 21.4,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02378X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    },
+    {
+      "location": "Not Available",
+      "hotspot_temp": 27.8,
+      "coldspot_temp": 22.8,
+      "temperature_delta": 5.0,
+      "date": "27.09.2022",
+      "image_reference": "RB02379X.JPG",
+      "interpretation": "Temperature differential of 5.0\u00b0C indicates potential moisture or thermal bridge"
+    }
+  ],
+  "date": "27.09.2022",
+  "device": "GTC 400 C Professional",
+  "metadata": {
+    "total_readings": 30,
+    "extraction_timestamp": "2024-03-16T14:30:00.000Z"
+  }
+}

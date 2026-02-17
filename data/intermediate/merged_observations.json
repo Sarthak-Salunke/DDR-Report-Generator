@@ -1,0 +1,252 @@
+{
+  "total_observations": 11,
+  "duplicate_groups": 2,
+  "conflicts": [],
+  "observations": [
+    {
+      "location": "Common Bathroom",
+      "issue_type": "Tile Hollowness",
+      "description": "Tile hollowness and plumbing issue observed",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [
+        "Photo 8-11",
+        "Photo 53-57"
+      ],
+      "confidence": 0.9,
+      "is_duplicate": true,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "Unknown Area",
+      "issue_type": "Thermal Anomaly",
+      "description": "Temperature differential of 5.4°C indicates potential moisture or thermal bridge",
+      "severity": "Medium",
+      "sources": [
+        "thermal"
+      ],
+      "evidence": [
+        "Hotspot: 28.8°C, Coldspot: 23.4°C, Delta: 5.4°C",
+        "Hotspot: 27.4°C, Coldspot: 22.4°C, Delta: 5.0°C",
+        "Hotspot: 27.0°C, Coldspot: 22.0°C, Delta: 5.0°C",
+        "Hotspot: 25.7°C, Coldspot: 20.7°C, Delta: 5.0°C",
+        "Hotspot: 25.5°C, Coldspot: 20.5°C, Delta: 5.0°C",
+        "Hotspot: 25.8°C, Coldspot: 20.8°C, Delta: 5.0°C",
+        "Hotspot: 26.2°C, Coldspot: 21.2°C, Delta: 5.0°C",
+        "Hotspot: 26.5°C, Coldspot: 21.5°C, Delta: 5.0°C",
+        "Hotspot: 25.8°C, Coldspot: 20.8°C, Delta: 5.0°C",
+        "Hotspot: 25.9°C, Coldspot: 20.9°C, Delta: 5.0°C",
+        "Hotspot: 26.0°C, Coldspot: 21.0°C, Delta: 5.0°C",
+        "Hotspot: 26.1°C, Coldspot: 21.1°C, Delta: 5.0°C",
+        "Hotspot: 26.3°C, Coldspot: 21.3°C, Delta: 5.0°C",
+        "Hotspot: 25.6°C, Coldspot: 20.6°C, Delta: 5.0°C",
+        "Hotspot: 26.5°C, Coldspot: 21.5°C, Delta: 5.0°C",
+        "Hotspot: 25.2°C, Coldspot: 20.2°C, Delta: 5.0°C",
+        "Hotspot: 25.6°C, Coldspot: 20.6°C, Delta: 5.0°C",
+        "Hotspot: 27.0°C, Coldspot: 22.0°C, Delta: 5.0°C",
+        "Hotspot: 26.7°C, Coldspot: 21.7°C, Delta: 5.0°C",
+        "Hotspot: 26.5°C, Coldspot: 21.5°C, Delta: 5.0°C",
+        "Hotspot: 27.3°C, Coldspot: 22.3°C, Delta: 5.0°C",
+        "Hotspot: 27.3°C, Coldspot: 22.3°C, Delta: 5.0°C",
+        "Hotspot: 25.2°C, Coldspot: 20.2°C, Delta: 5.0°C",
+        "Hotspot: 25.1°C, Coldspot: 20.1°C, Delta: 5.0°C",
+        "Hotspot: 25.9°C, Coldspot: 20.9°C, Delta: 5.0°C",
+        "Hotspot: 26.9°C, Coldspot: 21.9°C, Delta: 5.0°C",
+        "Hotspot: 25.6°C, Coldspot: 20.6°C, Delta: 5.0°C",
+        "Hotspot: 26.9°C, Coldspot: 21.9°C, Delta: 5.0°C",
+        "Hotspot: 26.4°C, Coldspot: 21.4°C, Delta: 5.0°C",
+        "Hotspot: 27.8°C, Coldspot: 22.8°C, Delta: 5.0°C"
+      ],
+      "confidence": 0.8,
+      "is_duplicate": true,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "Hall",
+      "issue_type": "Dampness",
+      "description": "Dampness observed at skirting level",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [
+        "Photo 1-6"
+      ],
+      "confidence": 0.9,
+      "is_duplicate": false,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "Bedroom",
+      "issue_type": "Dampness",
+      "description": "Dampness observed at skirting level",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [],
+      "confidence": 0.9,
+      "is_duplicate": false,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "Master Bedroom",
+      "issue_type": "Dampness",
+      "description": "Dampness observed at skirting level",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [
+        "Photo 20-25"
+      ],
+      "confidence": 0.9,
+      "is_duplicate": false,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "Kitchen",
+      "issue_type": "Dampness",
+      "description": "Dampness observed at skirting level",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [
+        "Photo 31-32"
+      ],
+      "confidence": 0.9,
+      "is_duplicate": false,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "Master Bedroom",
+      "issue_type": "Wall Dampness",
+      "description": "Dampness observed on wall",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [
+        "Photo 38-41"
+      ],
+      "confidence": 0.9,
+      "is_duplicate": false,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "External Wall",
+      "issue_type": "Crack and Duct Issue",
+      "description": "Crack and duct issue observed",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [
+        "Photo 42-47"
+      ],
+      "confidence": 0.9,
+      "is_duplicate": false,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "Parking Area",
+      "issue_type": "Seepage",
+      "description": "Seepage observed",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [
+        "Photo 49-52"
+      ],
+      "confidence": 0.9,
+      "is_duplicate": false,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "Common Bathroom",
+      "issue_type": "Ceiling Dampness",
+      "description": "Dampness observed on ceiling",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [],
+      "confidence": 0.9,
+      "is_duplicate": false,
+      "conflict_detected": false,
+      "conflict_details": null
+    },
+    {
+      "location": "Flat No. 203",
+      "issue_type": "Tile Joint Open",
+      "description": "Tile joint open observed",
+      "severity": null,
+      "sources": [
+        "inspection"
+      ],
+      "evidence": [
+        "Photo 59-64"
+      ],
+      "confidence": 0.9,
+      "is_duplicate": false,
+      "conflict_detected": false,
+      "conflict_details": null
+    }
+  ],
+  "metadata": {
+    "original_count": 41,
+    "deduplication_rate": 0.7317073170731707,
+    "similarity_threshold": 0.85,
+    "duplicate_group_details": [
+      [
+        1,
+        8
+      ],
+      [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    ]
+  }
+}

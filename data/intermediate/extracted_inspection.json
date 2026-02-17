@@ -1,0 +1,122 @@
+{
+  "property_details": {
+    "property_type": "Flat",
+    "floors": 11,
+    "inspection_date": "27.09.2022",
+    "inspected_by": [
+      "Krushna",
+      "Mahesh"
+    ],
+    "score": 85.71,
+    "flagged_items": 1
+  },
+  "observations": [
+    {
+      "location": "Hall",
+      "issue_type": "Dampness",
+      "description": "Dampness observed at skirting level",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": "Photo 1-6"
+    },
+    {
+      "location": "Common Bathroom",
+      "issue_type": "Tile Hollowness",
+      "description": "Tile hollowness observed",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": "Photo 8-11"
+    },
+    {
+      "location": "Bedroom",
+      "issue_type": "Dampness",
+      "description": "Dampness observed at skirting level",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": null
+    },
+    {
+      "location": "Master Bedroom",
+      "issue_type": "Dampness",
+      "description": "Dampness observed at skirting level",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": "Photo 20-25"
+    },
+    {
+      "location": "Kitchen",
+      "issue_type": "Dampness",
+      "description": "Dampness observed at skirting level",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": "Photo 31-32"
+    },
+    {
+      "location": "Master Bedroom",
+      "issue_type": "Wall Dampness",
+      "description": "Dampness observed on wall",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": "Photo 38-41"
+    },
+    {
+      "location": "External Wall",
+      "issue_type": "Crack and Duct Issue",
+      "description": "Crack and duct issue observed",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": "Photo 42-47"
+    },
+    {
+      "location": "Parking Area",
+      "issue_type": "Seepage",
+      "description": "Seepage observed",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": "Photo 49-52"
+    },
+    {
+      "location": "Common Bathroom",
+      "issue_type": "Tile Hollowness and Plumbing Issue",
+      "description": "Tile hollowness and plumbing issue observed",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": "Photo 53-57"
+    },
+    {
+      "location": "Common Bathroom",
+      "issue_type": "Ceiling Dampness",
+      "description": "Dampness observed on ceiling",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": null
+    },
+    {
+      "location": "Flat No. 203",
+      "issue_type": "Tile Joint Open",
+      "description": "Tile joint open observed",
+      "severity": null,
+      "source_document": "inspection",
+      "confidence": 0.9,
+      "evidence": "Photo 59-64"
+    }
+  ],
+  "root_causes": [
+    "Concealed plumbing",
+    "Damage in Nahani trap/Brickbat coba under tile flooring"
+  ],
+  "metadata": {
+    "total_observations": 11,
+    "extraction_timestamp": "2024-09-16T14:30:00.000Z"
+  }
+}
