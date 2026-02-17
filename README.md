@@ -64,9 +64,6 @@ GOOGLE_API_KEY=your_gemini_key_here
 
 # Option 2: Groq (Fast - Free tier available)
 GROQ_API_KEY=your_groq_key_here
-
-# Option 3: Anthropic Claude (Premium - $5 free credit)
-ANTHROPIC_API_KEY=your_claude_key_here
 ```
 
 ### Run the Generator
